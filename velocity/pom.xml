@@ -40,7 +40,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.5.0</version>
+                        <version>3.6.0</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -91,7 +91,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.4.1</version>
+                <version>3.5.1</version>
                 <configuration>
                     <relocations>
                         <relocation>
@@ -130,23 +130,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.5.0</version>
+                <version>3.6.0</version>
             </plugin>
         </plugins>
     </reporting>
 
     <repositories>
         <repository>
-            <id>velocitypowered-repo</id>
-            <url>https://repo.velocitypowered.com/releases/</url>
-        </repository>
-        <repository>
-            <id>minecraft-libraries</id>
-            <url>https://libraries.minecraft.net/</url>
-        </repository>
-        <repository>
-            <id>spongepowered-repo</id>
-            <url>https://repo.spongepowered.org/maven</url>
+            <id>papermc-repo</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
     </repositories>
 
