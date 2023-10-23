@@ -67,7 +67,8 @@ public class HttpUtils {
         } finally {
             try {
                 outputStream.close();
-            } catch (Exception ignored) {
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
 
@@ -75,7 +76,7 @@ public class HttpUtils {
     }
 
     private static HttpResponse readResponse(HttpURLConnection connection) {
-        InputStream stream = null;
+        InputStream stream;
         try {
             stream = connection.getInputStream();
         } catch (Exception exception) {
@@ -86,9 +87,7 @@ public class HttpUtils {
             }
         }
 
-        InputStreamReader streamReader = new InputStreamReader(stream);
-
-        try {
+        try (InputStreamReader streamReader = new InputStreamReader(stream)) {
             int responseCode = connection.getResponseCode();
 
             JsonObject response = GSON.fromJson(streamReader, JsonObject.class);
@@ -96,11 +95,6 @@ public class HttpUtils {
             return new HttpResponse(responseCode, response);
         } catch (Exception exception) {
             throw new RuntimeException("Failed to read response", exception);
-        } finally {
-            try {
-                streamReader.close();
-            } catch (Exception ignored) {
-            }
         }
     }
 

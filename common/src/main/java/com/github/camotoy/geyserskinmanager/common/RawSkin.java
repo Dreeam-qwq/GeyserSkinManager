@@ -26,13 +26,13 @@
 package com.github.camotoy.geyserskinmanager.common;
 
 public final class RawSkin {
-    public int width;
-    public int height;
-    public byte[] data;
+    public final int width;
+    public final int height;
+    public final byte[] data;
     public boolean alex;
-    public String geometryName;
-    public String geometry;
-    public String rawData;
+    public final String geometryName;
+    public final String geometry;
+    public final String rawData;
 
     public RawSkin(int width, int height, byte[] data, boolean alex, String geometryName, String geometry, String rawData) {
         this.width = width;

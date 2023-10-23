@@ -19,7 +19,8 @@ public final class FloodgateUtil {
                 } else {
                     warnFunction.accept("Showing skins despite Floodgate being installed!");
                 }
-            } catch (Exception ignored) {
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         } else {
             warnFunction.accept("ForceShowSkins active through config; Floodgate check is bypassed!");
