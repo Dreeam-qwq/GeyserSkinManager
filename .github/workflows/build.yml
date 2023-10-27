@@ -1,7 +1,9 @@
 name: Build GeyserSkinManager
+
 on:
   push:
     branches: [ master ]
+
 jobs:
   build:
     name: Build
@@ -13,11 +15,14 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
-          cache: maven
       - name: Build with Maven
         run: mvn clean package
-      - name: Upload GeyserSkinManager
-        uses: actions/upload-artifact@main
+
+      - name: Release GeyserSkinManager
+        uses: marvinpinto/action-automatic-releases@master
         with:
-          name: GeyserSkinManager
-          path: ./**/target/*.jar
+          title: "GeyserSkinManager"
+          automatic_release_tag: "build"
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          files: "./**/target/*.jar"
+          prerelease: false
