@@ -25,4 +25,4 @@ jobs:
           automatic_release_tag: "build"
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           files: "./**/target/*.jar"
-          prerelease: false
+          prerelease: true
