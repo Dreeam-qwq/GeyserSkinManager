@@ -1,10 +1,19 @@
 package com.github.camotoy.geyserskinmanager.common.platform;
 
-import com.github.camotoy.geyserskinmanager.common.*;
+import com.github.camotoy.geyserskinmanager.common.BedrockPluginMessageData;
+import com.github.camotoy.geyserskinmanager.common.BedrockSkinPluginMessageType;
+import com.github.camotoy.geyserskinmanager.common.Constants;
+import com.github.camotoy.geyserskinmanager.common.RawCape;
+import com.github.camotoy.geyserskinmanager.common.RawSkin;
+import com.github.camotoy.geyserskinmanager.common.SkinDatabase;
 import com.github.camotoy.geyserskinmanager.common.skinretriever.BedrockSkinRetriever;
 import org.geysermc.geyser.util.MathUtils;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.UUID;
