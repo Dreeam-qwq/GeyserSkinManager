@@ -4,6 +4,8 @@
 
 #### Skin visibility for non-modded players can be viewed without Floodgate installed, Or by changing the config option "force-show-skins:" from false to true.
 
+TODO: need to rewrite.
+
 Known caveats:
 
 - Only tested on Paper and Spigot 1.16+. 1.13 might break, but this will be fixed in the future.
